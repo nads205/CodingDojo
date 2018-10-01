@@ -2,7 +2,7 @@
 
 Build
 --------
-Please do a full rebuild when checking out the repo for the first time. This should restore the relevant Nuget packages.
+Please do a full rebuild when checking out the repo for the first time. This should restore the relevant Nuget packages. There should not be any external dependencies other that Nuget packages. The solution should compile first time.
 
 Tests
 --------
