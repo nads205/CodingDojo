@@ -9,8 +9,8 @@
     <ProjectGuid>{9423AC2D-3FB9-46DF-9447-367FD6A8BB8B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BankOcr.NetFramework.Tests</RootNamespace>
-    <AssemblyName>BankOcr.NetFramework.Tests</AssemblyName>
+    <RootNamespace>BankOcr.Tests</RootNamespace>
+    <AssemblyName>BankOcr.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SampleGenerator.cs" />
     <Compile Include="TestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace BankOcr.NetFramework.Tests
+namespace BankOcr.Tests
 {
     [TestFixture]
     public class UserStoryOneTests
@@ -27,14 +27,19 @@ namespace BankOcr.NetFramework.Tests
         public void TestSetupIsCorrect()
         {
             Assert.AreEqual(Entry.Count, 4);
+            foreach (var entry in Entry)
+            {
+                Assert.AreEqual(27,entry.Length);
+            }
         }
 
-        [Test]
-        public void TestParseSimple()
+        [TestCase("123456789")]
+        public void TestParseSimple(string expectedNumber)
         {
             var parser = new Code.Parser();
             var result = parser.Parse(Entry);
-            Assert.AreEqual("123456789", result);
+            //Assert.AreEqual("123456789", result);
+            Assert.AreEqual(expectedNumber, result);
         }
 
         [Test]
