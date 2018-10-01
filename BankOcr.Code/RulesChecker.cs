@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 
 namespace BankOcr.Code
 {
@@ -13,14 +12,14 @@ namespace BankOcr.Code
             var testCount = CheckCount(lines);
             if (!testCount)
             {
-                Trace.TraceError(string.Format("Entry doesn't contain 4 lines, contains {0} lines.", lines.Count()));
+                Trace.TraceError($"Entry doesn't contain 4 lines, contains {lines.Count} lines.");
                 return false;
             }
             //each line must be 27 characters 
             var testLength = CheckLength(lines);
             if (!testLength)
             {
-                Trace.TraceError(string.Format("Each line must be 27 characters in length")); //todo:perhaps output which 
+                Trace.TraceError("Each line must be 27 characters in length"); //todo:perhaps output which 
                 return false;
             }
 
@@ -35,7 +34,7 @@ namespace BankOcr.Code
 
         public bool CheckCount(List<string> lines)
         {
-            return lines.Count() == 4;
+            return lines.Count == 4;
         }
 
         public bool CheckLength(List<string> lines)

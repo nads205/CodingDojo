@@ -66,64 +66,64 @@ namespace BankOcr.Code
         }
 
         /// <summary>
-        /// given a char of numbers (matrix of 3,4) returns a intgeger
+        /// given a char of numbers (matrix of 3,4) returns a integer
         /// </summary>
         /// <param name="chars"></param>
         /// <returns></returns>
         public int NumberMatcher(List<string> chars)
         {
-            if (chars[0] == Characters.numberOne[0] &&
-                chars[1] == Characters.numberOne[1] &&
-                chars[2] == Characters.numberOne[2] &&
-                chars[3] == Characters.numberOne[3]
+            if (chars[0] == Characters.NumberOne[0] &&
+                chars[1] == Characters.NumberOne[1] &&
+                chars[2] == Characters.NumberOne[2] &&
+                chars[3] == Characters.NumberOne[3]
                 ) return 1;
 
-            if (chars[0] == Characters.numberTwo[0] &&
-                chars[1] == Characters.numberTwo[1] &&
-                chars[2] == Characters.numberTwo[2] &&
-                chars[3] == Characters.numberTwo[3]
+            if (chars[0] == Characters.NumberTwo[0] &&
+                chars[1] == Characters.NumberTwo[1] &&
+                chars[2] == Characters.NumberTwo[2] &&
+                chars[3] == Characters.NumberTwo[3]
                 ) return 2;
 
-            if (chars[0] == Characters.numberThree[0] &&
-                chars[1] == Characters.numberThree[1] &&
-                chars[2] == Characters.numberThree[2] &&
-                chars[3] == Characters.numberThree[3]
+            if (chars[0] == Characters.NumberThree[0] &&
+                chars[1] == Characters.NumberThree[1] &&
+                chars[2] == Characters.NumberThree[2] &&
+                chars[3] == Characters.NumberThree[3]
                 ) return 3;
 
-            if (chars[0] == Characters.numberFour[0] &&
-                chars[1] == Characters.numberFour[1] &&
-                chars[2] == Characters.numberFour[2] &&
-                chars[3] == Characters.numberFour[3]
+            if (chars[0] == Characters.NumberFour[0] &&
+                chars[1] == Characters.NumberFour[1] &&
+                chars[2] == Characters.NumberFour[2] &&
+                chars[3] == Characters.NumberFour[3]
                 ) return 4;
 
-            if (chars[0] == Characters.numberFive[0] &&
-                chars[1] == Characters.numberFive[1] &&
-                chars[2] == Characters.numberFive[2] &&
-                chars[3] == Characters.numberFive[3]
+            if (chars[0] == Characters.NumberFive[0] &&
+                chars[1] == Characters.NumberFive[1] &&
+                chars[2] == Characters.NumberFive[2] &&
+                chars[3] == Characters.NumberFive[3]
                 ) return 5;
 
-            if (chars[0] == Characters.numberSix[0] &&
-                chars[1] == Characters.numberSix[1] &&
-                chars[2] == Characters.numberSix[2] &&
-                chars[3] == Characters.numberSix[3]
+            if (chars[0] == Characters.NumberSix[0] &&
+                chars[1] == Characters.NumberSix[1] &&
+                chars[2] == Characters.NumberSix[2] &&
+                chars[3] == Characters.NumberSix[3]
                 ) return 6;
 
-            if (chars[0] == Characters.numberSeven[0] &&
-                chars[1] == Characters.numberSeven[1] &&
-                chars[2] == Characters.numberSeven[2] &&
-                chars[3] == Characters.numberSeven[3]
+            if (chars[0] == Characters.NumberSeven[0] &&
+                chars[1] == Characters.NumberSeven[1] &&
+                chars[2] == Characters.NumberSeven[2] &&
+                chars[3] == Characters.NumberSeven[3]
                 ) return 7;
 
-            if (chars[0] == Characters.numberEight[0] &&
-                chars[1] == Characters.numberEight[1] &&
-                chars[2] == Characters.numberEight[2] &&
-                chars[3] == Characters.numberEight[3]
+            if (chars[0] == Characters.NumberEight[0] &&
+                chars[1] == Characters.NumberEight[1] &&
+                chars[2] == Characters.NumberEight[2] &&
+                chars[3] == Characters.NumberEight[3]
                 ) return 8;
 
-            if (chars[0] == Characters.numberNine[0] &&
-                chars[1] == Characters.numberNine[1] &&
-                chars[2] == Characters.numberNine[2] &&
-                chars[3] == Characters.numberNine[3]
+            if (chars[0] == Characters.NumberNine[0] &&
+                chars[1] == Characters.NumberNine[1] &&
+                chars[2] == Characters.NumberNine[2] &&
+                chars[3] == Characters.NumberNine[3]
                 ) return 9;     
 
             return 0;
@@ -137,9 +137,9 @@ namespace BankOcr.Code
         public static IEnumerable<string> SplitInParts(this string s, int partLength)
         {
             if (s == null)
-                throw new ArgumentNullException("s");
+                throw new ArgumentNullException(nameof(s));
             if (partLength <= 0)
-                throw new ArgumentException("Part length has to be positive.", "partLength");
+                throw new ArgumentException("Part length has to be positive.", nameof(partLength));
 
             for (var i = 0; i < s.Length; i += partLength)
                 yield return s.Substring(i, Math.Min(partLength, s.Length - i));
