@@ -19,3 +19,8 @@ Open closed principle - the rules checker can be changed without chaging the par
 
 Logging
 -------
+Using the trace classes - will attach listeners if requried. https://support.microsoft.com/en-gb/help/815788/how-to-trace-and-debug-in-visual-c
+
+could use NLog or eqivalent when used in production. Or better still - how about the Elk Stack? 
+
+https://piotrminkowski.wordpress.com/2017/02/03/how-to-ship-logs-with-logstash-elasticsearch-and-rabbitmq/
