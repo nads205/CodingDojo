@@ -11,6 +11,8 @@ Given more time I would write more extensive tests which would test for a wider 
 
 I used NUnit - so ensure you have a suitable test runner (I use Resharper's test runner), the built in Visual Studio runner might not detect the unit tests
 
+I would eventually mock out the test repositiory for a live data file.
+
 Patterns
 --------
 I have tried to use a few patterns
