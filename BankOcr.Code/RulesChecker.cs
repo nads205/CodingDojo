@@ -10,38 +10,32 @@ namespace BankOcr.Code
         {
             //must be 4 lines long
             var testCount = CheckCount(lines);
-            if (!testCount)
-            {
-                Trace.TraceError($"Entry doesn't contain 4 lines, contains {lines.Count} lines.");
-                return false;
-            }
+            if (!testCount) return false;
+
             //each line must be 27 characters 
             var testLength = CheckLength(lines);
-            if (!testLength)
-            {
-                Trace.TraceError("Each line must be 27 characters in length"); //todo:perhaps output which 
-                return false;
-            }
+            if (!testLength) return false;
 
-            //all characters must be a pipe or a underscore
-            Trace.TraceInformation("Parsing");
-
-
-            
-
+            //todo: all characters must be a pipe or a underscore
+            Trace.TraceInformation("Parsing");            
             return true;
         }
 
         public bool CheckCount(List<string> lines)
         {
-            return lines.Count == 4;
+            if (lines.Count == 4) return true;
+            Trace.TraceError($"Entry doesn't contain 4 lines, contains {lines.Count} lines.");
+            return false;
+
         }
 
         public bool CheckLength(List<string> lines)
         {
             foreach (var line in lines)
             {
-                if (line.Length != 27) return false;
+                if (line.Length == 27) continue;
+                Trace.TraceError("Each line must be 27 characters in length"); 
+                return false;
             }
             return true;
         }

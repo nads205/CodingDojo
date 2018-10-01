@@ -6,21 +6,34 @@ namespace BankOcr.Tests
     [TestFixture]
     public class UserStoryOneTests
     {
-        private const string TestLine1 = "    _  _     _  _  _  _  _ ";
-        private const string TestLine2 = "  | _| _||_||_ |_   ||_||_|";
-        private const string TestLine3 = "  ||_  _|  | _||_|  ||_| _|";
-        private const string TestLine4 = "                           ";
-
-        public static readonly List<string> Entry = new List<string>();
+        public static readonly List<string> Entry = new List<string>();  //123456789
+        public static readonly List<string> Entry1 = new List<string>(); //000000000
 
         [SetUp]
         public void SetUp()
         {
+            var testLine1 = "    _  _     _  _  _  _  _ ";
+            var testLine2 = "  | _| _||_||_ |_   ||_||_|";
+            var testLine3 = "  ||_  _|  | _||_|  ||_| _|";
+            var testLine4 = "                           ";
+            
             Entry.Clear();
-            Entry.Add(TestLine1);
-            Entry.Add(TestLine2);
-            Entry.Add(TestLine3);
-            Entry.Add(TestLine4);
+            Entry.Add(testLine1);
+            Entry.Add(testLine2);
+            Entry.Add(testLine3);
+            Entry.Add(testLine4);
+
+            testLine1 = " _  _  _  _  _  _  _  _  _ ";
+            testLine2 = "| || || || || || || || || |";
+            testLine3 = "|_||_||_||_||_||_||_||_||_|";
+            testLine4 = "                           ";
+
+            Entry1.Clear();
+            Entry1.Add(testLine1);
+            Entry1.Add(testLine2);
+            Entry1.Add(testLine3);
+            Entry1.Add(testLine4);
+
         }
 
         [Test]
@@ -32,14 +45,15 @@ namespace BankOcr.Tests
                 Assert.AreEqual(27,entry.Length);
             }
         }
-
-        [TestCase("123456789")]
-        public void TestParseSimple(string expectedNumber)
+        
+        [Test]
+        public void TestParseSimple()
         {
             var parser = new Code.Parser();
             var result = parser.Parse(Entry);
-            //Assert.AreEqual("123456789", result);
-            Assert.AreEqual(expectedNumber, result);
+            Assert.AreEqual("123456789", result);
+            result = parser.Parse(Entry1);
+            Assert.AreEqual("000000000", result);
         }
 
         [Test]
@@ -48,16 +62,17 @@ namespace BankOcr.Tests
             var rulesChecker = new Code.RulesChecker();
             var result = rulesChecker.CheckCount(Entry);
             Assert.IsTrue(result);
+            result = rulesChecker.CheckCount(Entry1);
+            Assert.IsTrue(result);
         }
 
         [Test]
         public void TestCheckCountFails()
-        {
-            var entry1 = Entry;
+        {            
             var rulesChecker = new Code.RulesChecker();
             //remove 1 to check failure
-            entry1.Remove(TestLine1);
-            var result = rulesChecker.CheckCount(entry1);
+            Entry.RemoveAt(0);
+            var result = rulesChecker.CheckCount(Entry);
             Assert.IsFalse(result);
         }
 

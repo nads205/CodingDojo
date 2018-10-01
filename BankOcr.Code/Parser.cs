@@ -38,10 +38,10 @@ namespace BankOcr.Code
             var line1 = lines[1].SplitInParts(3).ToList();
             var line2 = lines[2].SplitInParts(3).ToList();
             var line3 = lines[3].SplitInParts(3).ToList();
-            List<List<string>> allChars = new List<List<string>>();            
-            for (int i = 0; i < 9; i++)
+            var allChars = new List<List<string>>();            
+            for (var i = 0; i < 9; i++)
             {
-                List<string> chars = new List<string>
+                var chars = new List<string>
                 {
                     line0[i],
                     line1[i],
@@ -55,7 +55,7 @@ namespace BankOcr.Code
 
         public string MatchChars(List<List<string>> chars)
         {
-            List<int> numbers = new List<int>();
+            var numbers = new List<int>();
             foreach (var c in chars)
             {
                 var number = NumberMatcher(c);
@@ -131,7 +131,7 @@ namespace BankOcr.Code
 
     }
 
-    static class StringExtensions
+    internal static class StringExtensions
     {
 
         public static IEnumerable<string> SplitInParts(this string s, int partLength)
