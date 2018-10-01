@@ -34,3 +34,5 @@ Using the trace classes - will attach listeners if requried. https://support.mic
 could use NLog or eqivalent when used in production. Or better still - how about the Elk Stack? 
 
 https://piotrminkowski.wordpress.com/2017/02/03/how-to-ship-logs-with-logstash-elasticsearch-and-rabbitmq/
+
+This article has some nice logging information too: https://stackoverflow.com/questions/20525277/simple-way-to-perform-error-logging
