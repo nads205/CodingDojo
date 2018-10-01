@@ -1,7 +1,13 @@
-﻿Tests
+Build
+--------
+Please do a full rebuild when checking out the repo for the first time
+
+Tests
 --------
 All code was written in a TDD fashion - I wrote the tests first, then the code.
 Given more time I would write more extensive tests which would test for a wider range of scenarios, larger datasets etc.
+
+I used NUnit - so ensure you have a suitable test runner (I use Resharper's test runner), the built in Visual Studio runner might not detect the unit tests
 
 Patterns
 --------
