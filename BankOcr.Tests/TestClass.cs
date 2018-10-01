@@ -59,7 +59,7 @@ namespace BankOcr.Tests
         [Test]
         public void TestCheckCountPasses()
         {
-            var rulesChecker = new Code.RulesChecker();
+            var rulesChecker = new Code.RulesEngine();
             var result = rulesChecker.CheckCount(Entry);
             Assert.IsTrue(result);
             result = rulesChecker.CheckCount(Entry1);
@@ -69,7 +69,7 @@ namespace BankOcr.Tests
         [Test]
         public void TestCheckCountFails()
         {            
-            var rulesChecker = new Code.RulesChecker();
+            var rulesChecker = new Code.RulesEngine();
             //remove 1 to check failure
             Entry.RemoveAt(0);
             var result = rulesChecker.CheckCount(Entry);
@@ -79,7 +79,7 @@ namespace BankOcr.Tests
         [Test]
         public void TestCheckLengthPasses()
         {
-            var rulesChecker = new Code.RulesChecker();
+            var rulesChecker = new Code.RulesEngine();
             var result = rulesChecker.CheckCount(Entry);
             Assert.IsTrue(result);            
             result = rulesChecker.CheckCount(Entry);
@@ -92,7 +92,7 @@ namespace BankOcr.Tests
             //remove 1 character from a line
             Entry.RemoveAt(0);
 
-            var rulesChecker = new Code.RulesChecker();
+            var rulesChecker = new Code.RulesEngine();
             var result = rulesChecker.CheckCount(Entry);
             Assert.IsFalse(result);
         }

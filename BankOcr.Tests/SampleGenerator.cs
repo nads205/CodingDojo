@@ -1,12 +1,15 @@
-﻿using BankOcr.Code;
+﻿using System;
 
 namespace BankOcr.Tests
 {
-    class SampleGenerator
+    /// <summary>
+    /// This class would generate a file of 500 lines as per the coding challenge
+    /// </summary>
+    internal class SampleGenerator
     {
-        void GenerateLines()
+        private void GenerateLines()
         {
-          //  var c = new Characters();
+          throw new NotImplementedException("");
         }
 
     }

@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace BankOcr.Code
 {
 
-    public class RulesChecker : IRulesChecker
+    public class RulesEngine : IRulesChecker
     {
         public bool CheckAllRules(List<string> lines)
         {

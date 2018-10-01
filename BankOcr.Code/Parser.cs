@@ -17,7 +17,7 @@ namespace BankOcr.Code
             }
 
             //pass all the rules? 
-            var rulesChecker = new RulesChecker();
+            var rulesChecker = new RulesEngine();
             var rulesPassed = rulesChecker.CheckAllRules(lines);
             if (!rulesPassed) return "Couldn't parse";
 
