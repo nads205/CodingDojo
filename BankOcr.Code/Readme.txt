@@ -1,6 +1,8 @@
+**This project was written in VS 2017, using Framework version 4.6.1**
+
 Build
 --------
-Please do a full rebuild when checking out the repo for the first time
+Please do a full rebuild when checking out the repo for the first time. This should restore the relevant Nuget packages.
 
 Tests
 --------
